@@ -6,6 +6,8 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import PetOwnerRegisterScreen from '../screens/PetOwnerRegisterScreen';
+import BusinessRegisterScreen from '../screens/BusinessRegisterScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -52,8 +54,40 @@ RegisterStack.navigationOptions = {
   ),
 };
 
+const PetOwnerRegisterStack = createStackNavigator({
+  PetOwnerRegister: PetOwnerRegisterScreen,
+});
+
+PetOwnerRegisterStack.navigationOptions = {
+  tabBarLabel: 'PetOwnerRegister',
+  tabBarVisible: false,
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'ios-add'}
+    />
+  ),
+};
+
+const BusinessRegisterStack = createStackNavigator({
+  BusinessRegister: BusinessRegisterScreen,
+});
+
+BusinessRegisterStack.navigationOptions = {
+  tabBarLabel: 'BusinessRegister',
+  tabBarVisible: false,
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'ios-add'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
   HomeStack,
   LoginStack,
   RegisterStack,
+  PetOwnerRegisterStack,
+  BusinessRegisterStack,
 });

@@ -4,8 +4,6 @@ import {
   ImageBackground,
   StyleSheet,
   Text,
-  Alert,
-  Button,
   TouchableOpacity,
 } from 'react-native';
 
@@ -54,7 +52,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: '#ffffff',
     fontSize: 25,
-    fontWeight: '600',
+    fontWeight: 'bold',
   },
   buttonStyle: {
     backgroundColor: '#e45d25',
