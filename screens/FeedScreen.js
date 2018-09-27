@@ -17,7 +17,8 @@ export default class FeedScreen extends React.Component {
   };
 
   render() {
-    const { container, profilePic, profileWrapper, searchIcon, searchInput, searchWrapper, header, body, category, categoryTitle } = styles;
+    const { container, profilePic, profileWrapper, searchIcon, searchInput, searchWrapper, header, body, category, categoryTitle,
+      categoryView, categoryPic, categoryText, categoryScroll, business } = styles;
 
     return (
       <View style={container}>
@@ -36,10 +37,35 @@ export default class FeedScreen extends React.Component {
           </TouchableOpacity>
 
         </View>
-        <ScrollView style={body}>
-          <ScrollView style={category}>
+        <ScrollView style={body} vertical={true} showsVerticalScrollIndicator={false}>
+          <View style={category}>
             <Text style={categoryTitle}>Categorias</Text>
-          </ScrollView>
+            <ScrollView style={categoryScroll} horizontal={true} vertical={false} showsHorizontalScrollIndicator={false}>
+              <TouchableOpacity style={categoryView}
+              onPress={() => alert('OpenCategory')}>
+                <Image source={require('../assets/images/petshop.png')} style={categoryPic}/>
+                <Text style={categoryText}>PetShops</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={categoryView}
+              onPress={() => alert('OpenCategory')}>
+                <Image source={require('../assets/images/vets.png')} style={categoryPic}/>
+                <Text style={categoryText}>Clínicas</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={categoryView}
+              onPress={() => alert('OpenCategory')}>
+                <Image source={require('../assets/images/hotel.png')} style={categoryPic}/>
+                <Text style={categoryText}>Hoteis</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={categoryView}
+              onPress={() => alert('OpenCategory')}>
+                <Image source={require('../assets/images/walkers.png')} style={categoryPic}/>
+                <Text style={categoryText}>PetWalkers</Text>
+              </TouchableOpacity>
+            </ScrollView>
+            <View style={business}>
+
+            </View>
+          </View>
 
         </ScrollView>
       </View>
@@ -94,13 +120,34 @@ const styles = StyleSheet.create({
     height: 85,
   },
   category: {
+    height: 160,
     borderBottomWidth: 1,
-    borderBottomColor: 'rgba(112,112,112,0.1)',
+    borderBottomColor: 'rgba(112,112,112,0.4)',
   },
   categoryTitle: {
     fontFamily: 'segoe-ui-sb',
     fontSize: 17,
-    marginTop: 20,
+    marginTop: 10,
     marginLeft: 20,
+  },
+  categoryScroll: {
+    marginTop: 20,
+    flexDirection: 'row',
+    overflow: 'hidden',
+  },
+  categoryView: {
+    alignItems: 'center',
+    width: 100,
+    height: 80,
+    marginRight: 10,
+  },
+  categoryPic: {
+    width: 100,
+    height: 60,
+    borderRadius: 10,
+  },
+  categoryText:{ 
+    fontFamily: 'segoe-ui-sli',
+    marginTop: 5,
   },
 });
