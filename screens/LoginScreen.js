@@ -41,12 +41,18 @@ export default class LoginScreen extends React.Component {
               onChangeText={(password) => this.setState({password})}/>
         </View>
         <View>
-          <TouchableOpacity style={loginStyle}>
+          <TouchableOpacity style={loginStyle}
+          onPress={() =>
+            navigate('FeedScreen')
+          }>
             <Text style={loginButtonText}>
               ENTRAR
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={faceStyle}>
+          <TouchableOpacity style={faceStyle}
+          onPress={() =>
+            navigate('FeedScreen')
+          }>
             <Image style={inputIcon} source={require('../assets/images/fb.png')} style={fbIcon}/>
             <Text style={faceButtonText}>
               ENTRAR COM O FACEBOOK

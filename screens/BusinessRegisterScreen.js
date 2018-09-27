@@ -64,9 +64,9 @@ export default class BusinessRegisterScreen extends React.Component {
         </View>
         <View>
           <TouchableOpacity style={loginStyle}
-            onPress={() =>
-              navigate('Login')
-            }>
+          onPress={() =>
+            navigate('FeedScreen')
+          }>
             <Text style={loginButtonText}>
               REGISTRAR
             </Text>

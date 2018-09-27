@@ -8,6 +8,7 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import PetOwnerRegisterScreen from '../screens/PetOwnerRegisterScreen';
 import BusinessRegisterScreen from '../screens/BusinessRegisterScreen';
+import FeedScreen from '../screens/FeedScreen';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -84,7 +85,23 @@ BusinessRegisterStack.navigationOptions = {
   ),
 };
 
+const FeedScreenStack = createStackNavigator({
+  FeedScreen: FeedScreen,
+});
+
+FeedScreenStack.navigationOptions = {
+  tabBarLabel: 'FeedScreen',
+  tabBarVisible: false,
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? `ios-options${focused ? '' : '-outline'}` : 'ios-add'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
+  FeedScreenStack,
   HomeStack,
   LoginStack,
   RegisterStack,

@@ -56,12 +56,18 @@ export default class PetOwnerRegisterScreen extends React.Component {
               onChangeText={(passwordConfirm) => this.setState({passwordConfirm})}/>
         </View>
         <View>
-          <TouchableOpacity style={loginStyle}>
+          <TouchableOpacity style={loginStyle}
+          onPress={() =>
+            navigate('FeedScreen')
+          }>
             <Text style={loginButtonText}>
               REGISTRAR
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity style={faceStyle}>
+          <TouchableOpacity style={faceStyle}
+          onPress={() =>
+            navigate('FeedScreen')
+          }>
             <Image style={inputIcon} source={require('../assets/images/fb.png')} style={fbIcon}/>
             <Text style={faceButtonText}>
               REGISTRAR COM O FACEBOOK

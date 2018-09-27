@@ -44,6 +44,7 @@ export default class App extends React.Component {
         'segoe-ui': require('./assets/fonts/segoeui.ttf'),
         'segoe-ui-sl': require('./assets/fonts/segoeuisl.ttf'),
         'segoe-ui-bold': require('./assets/fonts/segoeuib.ttf'),
+        'segoe-ui-sb': require('./assets/fonts/seguisb.ttf'),
         'brandonG': require('./assets/fonts/brandonLight.otf'),
         'brandonGBlack': require('./assets/fonts/brandonBlack.otf'),
         'brandonGBold': require('./assets/fonts/brandonBold.otf'),
