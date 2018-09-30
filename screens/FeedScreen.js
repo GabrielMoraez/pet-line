@@ -21,6 +21,34 @@ export default class FeedScreen extends React.Component {
       categoryView, categoryPic, categoryText, categoryScroll, business, businessTitle, businessView, businessPic, businessName, businessCategory,
       businessAddress, starContainer, star, starText, businessInfo, addressTab, addressTitle, addressText, addressWrapper } = styles;
 
+      const categories = require('../data/category.json');
+
+      const categoriesRender = categories.map((category, i)=>
+        <TouchableOpacity style={categoryView}
+        onPress={() => alert('OpenCategory')} key={i}>
+          <Image source={{uri: category.image}} style={categoryPic}/>
+          <Text style={categoryText}>{category.name}</Text>
+        </TouchableOpacity>);
+
+
+      const estabs = require('../data/establishments.json');
+
+      const estabsRender = estabs.map((estabs, i)=>
+        <TouchableOpacity style={businessView}
+        onPress={() => alert('OpenBusiness')} key={i}>
+          <Image source={{uri: estabs.image}} style={businessPic}/>
+          <View style={businessInfo}>
+            <Text style={businessName}>{estabs.name}</Text>
+            <Text style={businessCategory}>Categoria: {estabs.category}</Text>
+            <Text style={businessAddress}>Endereço: {estabs.address}</Text>
+          </View>
+          <View style={starContainer}>
+            <Image source={require('../assets/images/star.png')} style={star} />
+            <Text style={starText}>{estabs.rating}</Text>
+          </View>
+        </TouchableOpacity>);
+
+
     return (
       <View style={container}>
         <View style={header}>
@@ -33,7 +61,7 @@ export default class FeedScreen extends React.Component {
           </View>
 
           <TouchableOpacity style={profileWrapper}
-          onPress={() => alert('OpenMenu')}>
+          onPress={() => alert('aaa') }>
             <Image source={require('../assets/images/avatar.gif')} style={profilePic}/>
           </TouchableOpacity>
 
@@ -42,130 +70,16 @@ export default class FeedScreen extends React.Component {
           <View style={category}>
             <Text style={categoryTitle}>Categorias</Text>
             <ScrollView style={categoryScroll} horizontal={true} vertical={false} showsHorizontalScrollIndicator={false}>
-              <TouchableOpacity style={categoryView}
-              onPress={() => alert('OpenCategory')}>
-                <Image source={require('../assets/images/petshop.png')} style={categoryPic}/>
-                <Text style={categoryText}>PetShops</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={categoryView}
-              onPress={() => alert('OpenCategory')}>
-                <Image source={require('../assets/images/vets.png')} style={categoryPic}/>
-                <Text style={categoryText}>Clínicas</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={categoryView}
-              onPress={() => alert('OpenCategory')}>
-                <Image source={require('../assets/images/hotel.png')} style={categoryPic}/>
-                <Text style={categoryText}>Hoteis</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={categoryView}
-              onPress={() => alert('OpenCategory')}>
-                <Image source={require('../assets/images/walkers.png')} style={categoryPic}/>
-                <Text style={categoryText}>PetWalkers</Text>
-              </TouchableOpacity>
+              {categoriesRender}
             </ScrollView>
           </View>
 
           <View style={business}>
             <Text style={businessTitle}>Estabelecimentos</Text>
-            <TouchableOpacity style={businessView}
-            onPress={() => alert('OpenBusiness')}>
-              <Image source={require('../assets/images/avatar.gif')} style={businessPic}/>
-              <View style={businessInfo}>
-                <Text style={businessName}>Veterinário 1</Text>
-                <Text style={businessCategory}>Categoria: Clínicas</Text>
-                <Text style={businessAddress}>Rua Lorem Ipsum Dor</Text>
-              </View>
-              <View style={starContainer}>
-                <Image source={require('../assets/images/star.png')} style={star} />
-                <Text style={starText}>4,5</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={businessView}
-            onPress={() => alert('OpenBusiness')}>
-              <Image source={require('../assets/images/avatar.gif')} style={businessPic}/>
-              <View style={businessInfo}>
-                <Text style={businessName}>PetShop 1</Text>
-                <Text style={businessCategory}>Categoria: PetShop</Text>
-                <Text style={businessAddress}>Rua Lorem Ipsum Dor</Text>
-              </View>
-              <View style={starContainer}>
-                <Image source={require('../assets/images/star.png')} style={star} />
-                <Text style={starText}>4,5</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={businessView}
-            onPress={() => alert('OpenBusiness')}>
-              <Image source={require('../assets/images/avatar.gif')} style={businessPic}/>
-              <View style={businessInfo}>
-                <Text style={businessName}>Clínica Estética 1</Text>
-                <Text style={businessCategory}>Categoria: Clínicas</Text>
-                <Text style={businessAddress}>Rua Lorem Ipsum Dor</Text>
-              </View>
-              <View style={starContainer}>
-                <Image source={require('../assets/images/star.png')} style={star} />
-                <Text style={starText}>4,3</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={businessView}
-            onPress={() => alert('OpenBusiness')}>
-              <Image source={require('../assets/images/avatar.gif')} style={businessPic}/>
-              <View style={businessInfo}>
-                <Text style={businessName}>Veterinário 2</Text>
-                <Text style={businessCategory}>Categoria: Clínicas</Text>
-                <Text style={businessAddress}>Rua Lorem Ipsum Dor</Text>
-              </View>
-              <View style={starContainer}>
-                <Image source={require('../assets/images/star.png')} style={star} />
-                <Text style={starText}>4,0</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={businessView}
-            onPress={() => alert('OpenBusiness')}>
-              <Image source={require('../assets/images/avatar.gif')} style={businessPic}/>
-              <View style={businessInfo}>
-                <Text style={businessName}>Hotel 1</Text>
-                <Text style={businessCategory}>Categoria: Hoteis</Text>
-                <Text style={businessAddress}>Rua Lorem Ipsum Dor</Text>
-              </View>
-              <View style={starContainer}>
-                <Image source={require('../assets/images/star.png')} style={star} />
-                <Text style={starText}>4,0</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={businessView}
-            onPress={() => alert('OpenBusiness')}>
-              <Image source={require('../assets/images/avatar.gif')} style={businessPic}/>
-              <View style={businessInfo}>
-                <Text style={businessName}>PetWalker</Text>
-                <Text style={businessCategory}>Categoria: PetWalkers</Text>
-                <Text style={businessAddress}>Rua Lorem Ipsum Dor</Text>
-              </View>
-              <View style={starContainer}>
-                <Image source={require('../assets/images/star.png')} style={star} />
-                <Text style={starText}>3,9</Text>
-              </View>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={businessView}
-            onPress={() => alert('OpenBusiness')}>
-              <Image source={require('../assets/images/avatar.gif')} style={businessPic}/>
-              <View style={businessInfo}>
-                <Text style={businessName}>Hotel 2</Text>
-                <Text style={businessCategory}>Categoria: Hoteis</Text>
-                <Text style={businessAddress}>Rua Lorem Ipsum Dor</Text>
-              </View>
-              <View style={starContainer}>
-                <Image source={require('../assets/images/star.png')} style={star} />
-                <Text style={starText}>3,7</Text>
-              </View>
-            </TouchableOpacity>
+            {estabsRender}
           </View>
         </ScrollView>
+  
         <View style={addressTab}>
           <TouchableOpacity style={addressWrapper}
           onPress={() => alert('OpenAddress')}>
@@ -262,7 +176,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 70,
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 10,
     borderTopWidth: 1,
     borderTopColor: 'rgba(112,112,112,0.2)',
     borderBottomWidth: 1,
@@ -307,5 +221,10 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     fontSize: 25,
     fontFamily: 'segoe-ui-sl',
+  },
+  star: {
+    width: 20,
+    height: 20,
+    marginRight: 5,
   },
 });

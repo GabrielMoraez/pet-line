@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "PetShops",
+    "image": "https://i.imgur.com/snhfdgo.png"
+  },
+  {
+    "id": 2,
+    "name": "Clínicas",
+    "image": "https://i.imgur.com/9LjfzpA.png"
+  },
+  {
+    "id": 3,
+    "name": "Hotéis",
+    "image": "https://i.imgur.com/yH5Xs6B.png"
+  },
+  {
+    "id": 4,
+    "name": "PetWalkers",
+    "image": "https://i.imgur.com/KUIAxiF.png"
+  }
+]

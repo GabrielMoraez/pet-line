@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Luís Barros Lima",
+    "category": "PetWalker",
+    "address": "Rua Padre Marins Loureiro",
+    "rating": 4.8,
+    "image": "https://i.imgur.com/DjRkdaO.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Hotel Bom Pra Cachorro",
+    "category": "Hoteis",
+    "address": "Rua Pedro de Aquino",
+    "rating": 4.5,
+    "image": "https://i.imgur.com/365XwVc.jpg"
+  },
+  {
+    "id": 3,
+    "name": "PetShop Patinha Feliz",
+    "category": "PetShop",
+    "address": "Rua Antônio dos Reis Corrêa",
+    "rating": 4.2,
+    "image": "https://i.imgur.com/qWiFCUV.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Clínica Focinho Amigo",
+    "category": "Clínicas",
+    "address": "Rua Maxwell",
+    "rating": 4.2,
+    "image": "https://i.imgur.com/em7Fr5m.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Amanda Sousa Ribeiro",
+    "category": "PetWalker",
+    "address": "Travessa Continental",
+    "rating": 4.2,
+    "image": "https://i.imgur.com/TZ5iiIY.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Hotel Noite Azul",
+    "category": "Hotéis",
+    "address": "Rua São Sebastião",
+    "rating": 4.0,
+    "image": "https://i.imgur.com/5DdxgVS.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Clínica Animaniacs",
+    "category": "Clínicas",
+    "address": "Rua Sessenta e Três",
+    "rating": 3.9,
+    "image": "https://i.imgur.com/xTSnnxW.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Hotel Dorme Pra Cachorro",
+    "category": "Hotéis",
+    "address": "Rua Ferrari",
+    "rating": 3.9,
+    "image": "https://i.imgur.com/kKrdDfJ.jpg"
+  }
+]

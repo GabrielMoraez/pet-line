@@ -101,10 +101,11 @@ FeedScreenStack.navigationOptions = {
 };
 
 export default createBottomTabNavigator({
-  FeedScreenStack,
   HomeStack,
   LoginStack,
   RegisterStack,
   PetOwnerRegisterStack,
   BusinessRegisterStack,
+  FeedScreenStack,
+
 });
