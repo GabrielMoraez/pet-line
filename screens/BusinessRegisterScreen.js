@@ -13,6 +13,8 @@ export default class BusinessRegisterScreen extends React.Component {
       backContainer, backText, containerCNPJ} = styles;
     const {navigate} = this.props.navigation;
 
+
+    // Trasnformar os inputs desse formulário em componentes unícos
     return (
       <View style={container}>
         <View style={backgroundContainer}>
@@ -82,6 +84,9 @@ export default class BusinessRegisterScreen extends React.Component {
     );
   }
 }
+
+
+// Fazer css externo
 
 const styles = StyleSheet.create({
   container: {

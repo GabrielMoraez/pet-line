@@ -20,7 +20,11 @@ export default class HomeScreen extends React.Component {
     const { navigate } = this.props.navigation;
 
     return (
+
+      // Transformar os botões em componenetes únicos e utilizar apenas css externo
+
       <ImageBackground source={require('../assets/images/home-bg.png')}  style={{width: '100%', height: '100%'}}>
+      
         <Image source={require('../assets/images/logo.png')} style={{flex:1, marginBottom: 50, width: 300, alignSelf: 'center'}} resizeMode="contain" />
         <TouchableOpacity style={buttonStyle}
           onPress={() =>
@@ -42,6 +46,8 @@ export default class HomeScreen extends React.Component {
     );
   }
 }
+
+// Fazer css externo
 
 const styles = StyleSheet.create({
   container: {

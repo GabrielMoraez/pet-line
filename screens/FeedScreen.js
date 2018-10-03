@@ -23,6 +23,7 @@ export default class FeedScreen extends React.Component {
 
       const categories = require('../data/category.json');
 
+      // Transformar o categoriesRender em um componente único e importa-lo aqui, para limpar o arquivo e implementar modularização.
       const categoriesRender = categories.map((category, i)=>
         <TouchableOpacity style={categoryView}
         onPress={() => alert('OpenCategory')} key={i}>
@@ -33,6 +34,7 @@ export default class FeedScreen extends React.Component {
 
       const estabs = require('../data/establishments.json');
 
+      // Mesma coisa aqui. Transformar estabsRender em componente único e importa-lo aqui.
       const estabsRender = estabs.map((estabs, i)=>
         <TouchableOpacity style={businessView}
         onPress={() => alert('OpenBusiness')} key={i}>
@@ -91,6 +93,8 @@ export default class FeedScreen extends React.Component {
     );
   }
 }
+
+// Fazer css externo
 
 const styles = StyleSheet.create({
   container: {

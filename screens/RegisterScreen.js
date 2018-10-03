@@ -13,6 +13,9 @@ export default class RegisterScreen extends React.Component {
     const {navigate} = this.props.navigation;
 
     return (
+
+      // Criar um componente único para os botões
+
       <View style={container}>
         <View style={backgroundContainer}>
           <Image source={require('../assets/images/head-image.png')} resizeMode='cover' style={backdrop} />
@@ -50,6 +53,9 @@ export default class RegisterScreen extends React.Component {
     );
   }
 }
+
+
+// Fazer css externo
 
 const styles = StyleSheet.create({
   container: {
