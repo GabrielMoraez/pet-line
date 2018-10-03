@@ -8,12 +8,19 @@ export default class PetOwnerRegisterScreen extends React.Component {
   };
 
   render() {
+
+    // Tentar diminuir a quantidade de styles diferentes
+
+
     const {container, logo, backgroundContainer, backdrop, title, titleWrapper, containerName, inputIcon,
       inputs, containerEmail, containerPassword, containerPasswordConfirm, loginStyle, faceStyle, loginButtonText, faceButtonText, fbIcon,
       backContainer, backText} = styles;
     const {navigate} = this.props.navigation;
 
     return (
+
+      //Criar um componente único para os inputs e botões
+
       <View style={container}>
         <View style={backgroundContainer}>
           <Image source={require('../assets/images/head-image.png')} resizeMode='cover' style={backdrop} />
@@ -84,6 +91,8 @@ export default class PetOwnerRegisterScreen extends React.Component {
     );
   }
 }
+
+// Fazer css externo
 
 const styles = StyleSheet.create({
   container: {
