@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { bold } from 'ansi-colors';
 
 
 export default class FeedScreen extends React.Component {
@@ -19,7 +20,7 @@ export default class FeedScreen extends React.Component {
   render() {
     const { container, profilePic, profileWrapper, searchIcon, searchInput, searchWrapper, header, body, category, categoryTitle,
       categoryView, categoryPic, categoryText, categoryScroll, business, businessTitle, businessView, businessPic, businessName, businessCategory,
-      businessAddress, starContainer, star, starText, businessInfo, addressTab, addressTitle, addressText, addressWrapper } = styles;
+      businessAddress, starContainer, star, starText, businessInfo, addressTab, addressTitle, addressText, addressWrapper, firstHeader, secondHeader } = styles;
 
       const categories = require('../data/category.json');
 
@@ -48,24 +49,34 @@ export default class FeedScreen extends React.Component {
           </View>
         </TouchableOpacity>);
 
-
     return (
       <View style={container}>
         <View style={header}>
-          <View style={searchWrapper}>
-            <Image style={searchIcon} source={require('../assets/images/search.png')}/>
-            <TextInput style={searchInput}
-                placeholder="Procure por itens ou nomes"
-                underlineColorAndroid='transparent'
-                onChangeText={(searchText) => this.setState({searchText})}/>
+          <View style={firstHeader}>
+            <TouchableOpacity style={addressWrapper}
+            onPress={() => alert('OpenAddress')}>
+              <Text style={addressTitle}>ENDEREÇO ATUAL</Text>
+              <Text style={addressText}>Rua Afonso Cavalcanti, 13</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={profileWrapper}
+            onPress={() => alert('aaa') }>
+              <Image source={require('../assets/images/avatar.gif')} style={profilePic}/>
+            </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={profileWrapper}
-          onPress={() => alert('aaa') }>
-            <Image source={require('../assets/images/avatar.gif')} style={profilePic}/>
-          </TouchableOpacity>
+          <View style={secondHeader}>
+            <View style={searchWrapper}>
+              <Image style={searchIcon} source={require('../assets/images/search.png')}/>
+              <TextInput style={searchInput}
+                  placeholder="Procure por itens ou nomes"
+                  underlineColorAndroid='transparent'
+                  onChangeText={(searchText) => this.setState({searchText})}/>
+            </View>
 
+          </View>
         </View>
+        
         <ScrollView style={body} vertical={true} showsVerticalScrollIndicator={false}>
           <View style={category}>
             <Text style={categoryTitle}>Categorias</Text>
@@ -79,14 +90,6 @@ export default class FeedScreen extends React.Component {
             {estabsRender}
           </View>
         </ScrollView>
-  
-        <View style={addressTab}>
-          <TouchableOpacity style={addressWrapper}
-          onPress={() => alert('OpenAddress')}>
-            <Text style={addressTitle}>Endereço atual</Text>
-            <Text style={addressText}>Rua Afonso Cavalcanti, 13</Text>
-          </TouchableOpacity>
-        </View>
       </View>
     );
   }
@@ -95,7 +98,7 @@ export default class FeedScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: '#fff',
+    backgroundColor: '#F5F5F5',
   },
   profileWrapper:{
     overflow: 'hidden',
@@ -112,16 +115,16 @@ const styles = StyleSheet.create({
     borderRadius: 100,
   },
   searchInput: {
-    width:250,
+    width:'100%',
     fontFamily: 'brandonG',
     fontSize: 20,
   },
   searchWrapper: {
-    backgroundColor: '#efefef',
+    backgroundColor: '#F5F5F5',
     borderRadius: 10,
     marginLeft: 20,
     marginTop: 20,
-    width:250,
+    width: '80%',
     height:50,
     flexDirection: 'row',
   },
@@ -133,34 +136,35 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   header: {
-    flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderBottomColor: 'rgba(112,112,112,0.4)',
-    height: 85,
+    backgroundColor: "#FFF",
+    flexWrap: 'wrap', 
+    alignItems: 'flex-start',
+    flexDirection:'column',
   },
   category: {
-    height: 160,
-    borderBottomWidth: 1,
-    borderBottomColor: 'rgba(112,112,112,0.2)',
+    marginTop: 20,
+    marginBottom: 20,
+    backgroundColor: "#FFF",
   },
   categoryTitle: {
     color: '#707070',
     fontFamily: 'segoe-ui-sb',
     fontSize: 17,
+    fontWeight: 'bold',
     marginTop: 10,
     marginLeft: 20,
   },
   categoryScroll: {
-    marginTop: 20,
+    marginTop: 10,
+    marginBottom: 10,
     flexDirection: 'row',
     overflow: 'hidden',
   },
   categoryView: {
     alignItems: 'center',
     width: 100,
-    height: 80,
-    marginRight: 10,
-    marginLeft: 10,
+    marginRight: 20,
+    marginLeft: 20,
   },
   categoryPic: {
     width: 100,
@@ -169,8 +173,10 @@ const styles = StyleSheet.create({
   },
   categoryText: { 
     color: '#707070',
-    fontFamily: 'segoe-ui-sli',
-    marginTop: 5,
+    fontFamily: 'segoe-ui-sl',
+  },
+  business: {
+    backgroundColor: "#FFF",
   },
   businessView: {
     flexDirection: 'row',
@@ -204,27 +210,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 20,
   },
-  addressTab: {
-    backgroundColor: '#e45d25',
-    height: 70,
+  addressWrapper: {
+    width: '80%',
+    marginTop: 20,
+    marginLeft: 20,
   },
   addressTitle: {
-    fontSize: 17,
-    marginTop: 10,
-    marginLeft: 20,
-    color: '#FFF',
+    fontSize: 15,
+    color: 'grey',
     fontFamily: 'segoe-ui-sl',
+    fontWeight: 'bold',
   },
   addressText: {
-    marginTop: -10,
-    color: '#FFF',
-    marginLeft: 30,
-    fontSize: 25,
+    color: 'black',
+    fontSize: 17,
     fontFamily: 'segoe-ui-sl',
   },
   star: {
     width: 20,
     height: 20,
     marginRight: 5,
+  },
+  firstHeader: {
+    flexDirection:'row',
+  },
+  secondHeader: {
+    marginBottom: 20,
   },
 });
